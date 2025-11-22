@@ -45,7 +45,7 @@ def calc(num1, num2, action="multiply"):
         num1 = int(num1)
         num2 = int(num2)
     except Exception:
-        return (f"You can't {action} those values!")       
+        return (f"Invalid numeric input")       
     try:
         match action:
             case "add":
@@ -60,8 +60,6 @@ def calc(num1, num2, action="multiply"):
                 return num1 % num2
             case "int_divide":
                 return num1 // num2
-            case "power":
-                return num1 ** num2
             case "divide":
                 return num1 / num2          
             case _:
@@ -105,11 +103,14 @@ def repeat(string, count):
 
 
 # Task 7: Student Scores, Using **kwargs
-def student_scores(request="best", **kwargs):                 
-        if request == "mean":
-            return int(sum(kwargs.values())/len(kwargs))
-        else:
-            return max(kwargs, key=kwargs.get)
+def student_scores(request="best", **kwargs):  
+        try:               
+            if request == "mean":
+                return int(sum(kwargs.values())/len(kwargs))
+            else:
+                return max(kwargs, key=kwargs.get)
+        except ZeroDivisionError:
+            return "Provide scores"
                   
 
 # Task 8: Titleize, with String and List Operations
