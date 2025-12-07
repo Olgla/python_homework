@@ -42,8 +42,8 @@ def greet(name):
     
 def calc(num1, num2, action="multiply"):
     try: 
-        num1 = int(num1)
-        num2 = int(num2)
+        num1 = float(num1)
+        num2 = float(num2)
     except Exception:
         return (f"Invalid numeric input")       
     try:

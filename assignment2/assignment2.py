@@ -44,7 +44,7 @@ employee_id_column = column_index("employee_id")
 def first_name(rowNum):
     first_name_column = column_index("first_name")
     return employees["rows"][rowNum][first_name_column]
-# print(first_name(2))
+print(first_name(3))
 
 
 #Task 5: Find the Employee: a Function in a Function
@@ -78,7 +78,7 @@ def employee_dict(row):
     values = row[1:]
     return dict(zip(keys, values))
 
-print(employee_dict(employees["rows"][1]))
+# print(employee_dict(employees["rows"][1]))
 
 
 #Task 9: A dict of dicts, for All Employees
@@ -151,7 +151,7 @@ def create_minutes_list():
     return list(records) #to get the list instead of map iterator object, initiate list creation
     
 minutes_list = create_minutes_list()
-print(minutes_list)
+# print(minutes_list)
 
 
 #Task 15: Write Out Sorted List
